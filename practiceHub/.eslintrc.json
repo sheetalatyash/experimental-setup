@@ -1,0 +1,39 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": ["@typescript-eslint"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.app.json", "tsconfig.spec.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "eslint:recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/semi": ["error", "always"],
+        "quotes": ["error", "single"],
+        "no-trailing-spaces": "error",
+        "eol-last": ["error", "always"]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    },
+ {
+  "files": ["*.spec.ts"],
+  "env": {
+    "jasmine": true
+  }
+}
+]
+}
